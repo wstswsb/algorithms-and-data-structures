@@ -1,0 +1,44 @@
+Timer unit: 1e-07 s
+
+Total time: 24.1078 s
+File: C:\Users\Sviat\PycharmProjects\algorithms\tests\structures\test_singly_linked_list.py
+Function: test_native_list_and_custom_creation_performance at line 328
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   328                                           @pytest.mark.skipif(os.getenv("LINE_PROFILE") != "1", reason="profile mode disabled")
+   329                                           @profile
+   330                                           def test_native_list_and_custom_creation_performance():
+   331      1001       4968.0      5.0      0.0      for _ in range(1_000):
+   332      1000     804955.0    805.0      0.3          list(range(10_000))
+   333      1000  240267898.0 240267.9     99.7          LinkedList.from_iterable(range(10_000))  # x250 slower
+
+Total time: 26.1509 s
+File: C:\Users\Sviat\PycharmProjects\algorithms\tests\structures\test_circular_linked_list.py
+Function: test_native_list_and_custom_creation_performance at line 307
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   307                                           @pytest.mark.skipif(os.getenv("LINE_PROFILE") != "1", reason="profile mode disabled")
+   308                                           @profile
+   309                                           def test_native_list_and_custom_creation_performance():
+   310      1001       4819.0      4.8      0.0      for _ in range(1_000):
+   311      1000    1087323.0   1087.3      0.4          list(range(10_000))
+   312      1000  260416860.0 260416.9     99.6          CircularList.from_iterable(range(10_000))  # x200 slower
+
+Total time: 27.7189 s
+File: C:\Users\Sviat\PycharmProjects\algorithms\tests\structures\test_doubly_linked_list.py
+Function: test_native_list_and_custom_creation_performance at line 357
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   357                                           @pytest.mark.skipif(os.getenv("LINE_PROFILE") != "1", reason="profile mode disabled")
+   358                                           @profile
+   359                                           def test_native_list_and_custom_creation_performance():
+   360      1001       5056.0      5.1      0.0      for _ in range(1_000):
+   361      1000     965965.0    966.0      0.3          list(range(10_000))
+   362      1000  276218430.0 276218.4     99.6          DoublyLinkedList.from_iterable(range(10_000))  # x250 slower
+
+ 24.11 seconds - C:\Users\Sviat\PycharmProjects\algorithms\tests\structures\test_singly_linked_list.py:328 - test_native_list_and_custom_creation_performance
+ 26.15 seconds - C:\Users\Sviat\PycharmProjects\algorithms\tests\structures\test_circular_linked_list.py:307 - test_native_list_and_custom_creation_performance
+ 27.72 seconds - C:\Users\Sviat\PycharmProjects\algorithms\tests\structures\test_doubly_linked_list.py:357 - test_native_list_and_custom_creation_performance
